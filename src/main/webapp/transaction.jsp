@@ -16,14 +16,14 @@
 	<div class="container">
 		<div class="header">
 			<div class="logo">
-				<img src="C:\Users\sejal\OneDrive\Documents\NetBeansProjects\Onlt Blockchain\Blockchain.png">
+				<img src="img/Blockchain.png">
 			</div>
 			<div class="title">
 				<h1>OnIt Blockchain</h1>
 			</div>
 
 			<div class="wallet">
-				<p>Wallet Balance <strong>3.57 oni</strong></p>
+				<p>Wallet Balance <strong>3.57 ONI</strong></p>
 			</div>
 		</div>
 
@@ -31,7 +31,7 @@
 			<div class="send">
 				<h2>Send</h2>
 				<input type="text" name="address" placeholder="Address"><br>
-				<input type="text" name="amnt" placeholder="Amount (oni)"><br>
+				<input type="text" name="amnt" placeholder="Amount (ONI)"><br>
 				<input type="submit" name="send" value="Send">
 			</div>
 
@@ -40,7 +40,7 @@
 				<table>
 					<tr>
 						<td><a href='#'>02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a></td>
-                                                <td><img src="C:\Users\sejal\OneDrive\Documents\NetBeansProjects\Onlt Blockchain\qr.png" height="100px" width="100px"></td>
+                                                <td><img src="img/qr.png" height="100px" width="100px"></td>
 					</tr>
 				</table>
 			</div>
@@ -63,7 +63,7 @@
 					<td><a href="#">54821</a></td>
 					<td>&lt;1m</td>
 					<td>892</td>
-					<td>650.45 oni</td>
+					<td>650.45 ONI</td>
 					
 					<td>87.42</td>
 					<td><a href="#">view</a></td>
@@ -72,7 +72,7 @@
 					<td><a href="#">54820</a></td>
 					<td>3m</td>
 					<td>427</td>
-					<td>8724.67 oni</td>
+					<td>8724.67 ONI</td>
 					
 					<td>1024.89</td>
 					<td><a href="#">view</a></td>
@@ -81,7 +81,7 @@
 					<td><a href="#">54819</a></td>
 					<td>7m</td>
 					<td>89</td>
-					<td>9247.77 oni</td>
+					<td>9247.77 ONI</td>
 				
 					<td>347.24</td>
 					<td><a href="#">view</a></td>
@@ -90,7 +90,7 @@
 					<td><a href="#">54818</a></td>
 					<td>12m</td>
 					<td>1127</td>
-					<td>784.32 oni</td>
+					<td>784.32 ONI</td>
 					
 					<td>932.44</td>
 					<td><a href="#">view</a></td>
@@ -99,7 +99,7 @@
 					<td><a href="#">54817</a></td>
 					<td>20m</td>
 					<td>624</td>
-					<td>29.64 oni</td>
+					<td>29.64 ONI</td>
 					
 					<td>1008.19</td>
 					<td><a href="#">view</a></td>
