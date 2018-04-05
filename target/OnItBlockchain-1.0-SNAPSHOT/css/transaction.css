@@ -1,15 +1,15 @@
 /*
-To change this license header, choose License Headers in Project Properties.
+To change this license header, choose License Headers in Project Properties#
 To change this template file, choose Tools | Templates
-and open the template in the editor.
+and open the template in the editor#
 */
 /* 
-    Created on : Feb 28, 2018, 8:31:35 AM
-    Author     : sejal
+    Created on : Apr 5, 2018, 8:31:35 AM
+    Author     : bryce
 */
 
 html, body {
-	font-family: Helvetica;
+	font-family: Ubuntu, sans-serif;
 	margin: 0;
 	padding: 0;
 }
@@ -18,9 +18,10 @@ a:visited {
 	color: blue;
 }
 
-.header {
+#header {
 	width: 100%;
-	display: inline-block;
+	display: flex;
+        justify-content: space-around;
 	background-color: #1c8adb;
 	color: #cccccc;
 	height: 10%;
@@ -29,36 +30,37 @@ a:visited {
 	border-bottom: 3px solid #609eff;
 }
 
-.logo {
+#logo {
 	float: left;
 }
 
-.logo img {
-	height: 90px;
+#logo img {
+	height: 70pt;
 	width: auto;
-	margin:-5px;
+	margin: 15%;
 }
 
-.title {
+#title {
 	width: 70%;
 	float: left;
+        font-size: 28pt;
 }
 
-.wallet {
+#wallet {
 	float: right;
-	font-size: 1.2em;
+	font-size: 1#2em;
 	padding-right: 70px;
 	margin-top: 10px;
 }
 
-.body {
+#body {
 	margin-top: -100px;
 	height: 50%;
 	display: inline-block;
 	width: 100%;
 }
 
-.send {
+#send {
 	text-align: center;
 	display: block;
 	float: left;
@@ -66,20 +68,20 @@ a:visited {
 	padding-top: 5%;
 }
 
-.send h2 {
+#send h2 {
 	padding-bottom: 45px;
 }
 
-.send input {
+#send input {
 	margin: 10px;
 }
 
-.send input[type="text"] {
+#send input[type="text"] {
 	width: 400px;
 	text-align: center;
 }
 
-.receive {
+#receive {
 	width: 60%;
 	display: block;
 	float: right;
@@ -87,19 +89,19 @@ a:visited {
 	padding-top: 5%;
 }
 
-.receive a:link {
+#receive a:link {
 	text-decoration: none;
 }
 
-.receive table {
+#receive table {
 	margin: 0px auto;
 }
 
-.receive td {
+#receive td {
 	padding: 25px;
 }
 
-.ledger {
+#ledger {
 	width: 100%;
 	display: inline-block;
 	position: fixed;
@@ -110,25 +112,25 @@ a:visited {
 	border-top: 2px solid #609eff;
 }
 
-.ledger h2 {
+#ledger h2 {
 	text-align: center;
 }
 
-.ledger table {
+#ledger table {
 	margin: 0px auto;
 	width: 100%;
 	height: 84%;
 	text-align: center;
 }
 
-.ledger tr:nth-child(even) {
+#ledger tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.ledger th {
+#ledger th {
 	border-bottom: 1px solid #bababa;
 }
 
-.ledger a:link {
+#ledger a:link {
 	text-decoration: none;
 }

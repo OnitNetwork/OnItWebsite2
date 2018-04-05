@@ -9,44 +9,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Transaction</title>
-	<link rel="stylesheet" href="style1.css">
+	<title>OnIt - Transaction</title>
+	<link rel="stylesheet" href="css/transaction.css">
 </head>
 <body>
-	<div class="container">
-		<div class="header">
-			<div class="logo">
+	<div id="container">
+		<div id="header">
+			<div id="logo">
 				<img src="img/Blockchain.png">
 			</div>
-			<div class="title">
-				<h1>OnIt Blockchain</h1>
+			<div id="title">
+				<p>OnIt Blockchain</p>
 			</div>
 
-			<div class="wallet">
+			<div id="wallet">
 				<p>Wallet Balance <strong>3.57 ONI</strong></p>
 			</div>
 		</div>
 
-		<div class="body">
-			<div class="send">
+		<div id="body">
+			<div id="send">
 				<h2>Send</h2>
 				<input type="text" name="address" placeholder="Address"><br>
 				<input type="text" name="amnt" placeholder="Amount (ONI)"><br>
 				<input type="submit" name="send" value="Send">
 			</div>
 
-			<div class="receive">
+			<div id="receive">
+                            <div>
 				<h2>Receive</h2>
-				<table>
-					<tr>
-						<td><a href='#'>02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a></td>
-                                                <td><img src="img/qr.png" height="100px" width="100px"></td>
-					</tr>
-				</table>
+                                <a href='#'>02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a>
+                            </div>
 			</div>
 		</div>
 
-		<div class="ledger">
+		<div id="ledger">
 			<h2>Latest Blocks</h2>
 
 			<table>
