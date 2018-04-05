@@ -19,7 +19,7 @@
             <img src="img/Blockchain.png" class="logo">
             <h1>OnIt Blockchain</h1>
             
-            <form action="NewServlet" method="POST">
+            <form action="UserHandler" method="POST">
             
                 <p><input type="submit" value="Create New Wallet" name="action1"></p>
                 
