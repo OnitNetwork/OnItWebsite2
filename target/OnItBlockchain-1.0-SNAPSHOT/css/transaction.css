@@ -29,6 +29,7 @@ a:visited {
 	width: 90%;
 	display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 	color: #cccccc;
 	height: 10%;
 	margin-bottom: 10px;
@@ -36,19 +37,17 @@ a:visited {
 }
 
 #img {
-	height: 70pt;
+	height: 55pt;
 	width: auto;
 	margin-top: 10%;
 }
 
 #title {
-        font-size: 28pt;
         display: flex;
         justify-content: space-between;
 }
 
 #wallet {
-	font-size: 20pt;
         margin-top: 1%;
         margin-right: 5%;
 }
@@ -58,8 +57,8 @@ a:visited {
         flex-wrap: wrap;
         justify-content: space-around;
 	width: 100%;
-        height: 30%;
         align-items: stretch;
+        margin-top: 5%;
 }
 
 .sectionHead {
@@ -73,7 +72,7 @@ a:visited {
 
 #dsktpRecBody {
         width: 100%;
-        margin-top: 15%;
+        margin-top: 5%;
         word-wrap: break-word; 
 }
 
@@ -83,7 +82,7 @@ a:visited {
 }
 
 .bodyCats {
-	width: 375pt;    
+	width: 325pt;    
 	display: flex;
         justify-content: space-around;
 	text-align: center;
@@ -119,12 +118,7 @@ a:visited {
 #ledger {
 	width: 100%;
 	display: inline-block;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	height: 40%;
-	margin-bottom: 15px;
-	border-top: 2px solid #609eff;
+	margin-top: 5%;
 }
 
 #ledger h2 {
@@ -139,7 +133,7 @@ a:visited {
 }
 
 #ledger tr:nth-child(even) {
-    background-color: #dddddd;
+        background-color: #dddddd;
 }
 
 #ledger th {
@@ -158,4 +152,6 @@ a:visited {
 /*mobile*/
 @media only screen and (max-width: 768px) {
 	#dsktpRecBody { display: none }
+        #send, #receive, #transactions { border-bottom: 2px solid #609eff;
+                                         padding-bottom: 10px; }
 }

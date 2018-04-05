@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body background="img/2.jpg">
+    <body>
         
         <div class="login-box">
             <img src="img/login.png" class="logo">

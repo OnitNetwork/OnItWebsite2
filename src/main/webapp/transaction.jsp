@@ -11,17 +11,18 @@
 <head>
 	<title>OnIt - Transaction</title>
 	<link rel="stylesheet" href="css/transaction.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
 	<div id="container">
                 <div id="headerContainer"><div id="header">
 			<div id="title">
                             <div><img id="img" src="img/Blockchain.png"></div>
-                            <div id="headText"><p>OnIt Blockchain</p></div>
+                            <div id="headText"><h1>OnIt Blockchain</h1></div>
 			</div>
 
 			<div id="wallet">
-				<p>Wallet Balance <strong>100 ONI</strong></p>
+				<h2>Wallet Balance: <strong>100 ONI</strong></h2>
 			</div>
                 </div></div>
 
@@ -29,8 +30,8 @@
 			<div id="send" class="bodyCats">
                             <div class="sectionHead">Send</div>
                             <div id="sendBody">
-				<input type="text" name="address" placeholder="Address"><br>
-				<input type="text" name="amnt" placeholder="Amount (ONI)"><br>
+				<input type="text" name="address" placeholder="Address" style="width: 300px;"><br>
+				<input type="text" name="amnt" placeholder="Amount (ONI)" style="width: 200px;"><br>
 				<input type="submit" name="send" value="Send">
                             </div>
 			</div>
@@ -65,48 +66,12 @@
 					<th>Hash</th>
 				</tr>
 				<tr>
-					<td><a href="#">54821</a></td>
-					<td>&lt;1m</td>
-					<td>892</td>
-					<td>650.45 ONI</td>
+					<td><a href="#">Genesis</a></td>
+					<td>1d</td>
+					<td>0</td>
+					<td>0 ONI</td>
 					
-					<td>87.42</td>
-					<td><a href="#">view</a></td>
-				</tr>
-				<tr>
-					<td><a href="#">54820</a></td>
-					<td>3m</td>
-					<td>427</td>
-					<td>8724.67 ONI</td>
-					
-					<td>1024.89</td>
-					<td><a href="#">view</a></td>
-				</tr>
-				<tr>
-					<td><a href="#">54819</a></td>
-					<td>7m</td>
-					<td>89</td>
-					<td>9247.77 ONI</td>
-				
-					<td>347.24</td>
-					<td><a href="#">view</a></td>
-				</tr>
-				<tr>
-					<td><a href="#">54818</a></td>
-					<td>12m</td>
-					<td>1127</td>
-					<td>784.32 ONI</td>
-					
-					<td>932.44</td>
-					<td><a href="#">view</a></td>
-				</tr>
-				<tr>
-					<td><a href="#">54817</a></td>
-					<td>20m</td>
-					<td>624</td>
-					<td>29.64 ONI</td>
-					
-					<td>1008.19</td>
+					<td>0</td>
 					<td><a href="#">view</a></td>
 				</tr>
 			</table>
