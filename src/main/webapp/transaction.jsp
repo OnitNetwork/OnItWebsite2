@@ -14,33 +14,41 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<div id="logo">
-				<img src="img/Blockchain.png">
-			</div>
+                <div id="headerContainer"><div id="header">
 			<div id="title">
-				<p>OnIt Blockchain</p>
+                            <div><img id="img" src="img/Blockchain.png"></div>
+                            <div id="headText"><p>OnIt Blockchain</p></div>
 			</div>
 
 			<div id="wallet">
-				<p>Wallet Balance <strong>3.57 ONI</strong></p>
+				<p>Wallet Balance <strong>100 ONI</strong></p>
 			</div>
-		</div>
+                </div></div>
 
 		<div id="body">
-			<div id="send">
-				<h2>Send</h2>
+			<div id="send" class="bodyCats">
+                            <div class="sectionHead">Send</div>
+                            <div id="sendBody">
 				<input type="text" name="address" placeholder="Address"><br>
 				<input type="text" name="amnt" placeholder="Amount (ONI)"><br>
 				<input type="submit" name="send" value="Send">
-			</div>
-
-			<div id="receive">
-                            <div>
-				<h2>Receive</h2>
-                                <a href='#'>02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a>
                             </div>
 			</div>
+
+			<div id="receive" class="bodyCats">
+                            <div>
+				<div class="sectionHead">Receive</div>
+                                <div id="mobiRecBody"><a href='#'>Click to show Public Key</a></div>
+                                <div id="dsktpRecBody"><a href="#">02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a></div>
+                            </div>
+			</div>
+                    
+                        <div id="transactions" class="bodyCats">
+                            <div>
+                                <div class="sectionHead">Transactions</div>
+                                <div id="transactionBody">Nothing to show here... Yet!</div>
+                            </div>
+                        </div>
 		</div>
 
 		<div id="ledger">
