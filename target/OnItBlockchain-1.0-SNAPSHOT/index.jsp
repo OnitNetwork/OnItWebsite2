@@ -19,14 +19,10 @@
             <img src="img/Blockchain.png" class="logo">
             <h1>OnIt Blockchain</h1>
             
-            <form action="UserHandler" method="POST">
-            
-                <p><input type="submit" value="Create New Wallet" name="action1"></p>
+            <a href="createwallet.jsp"> <div id="button"> <p>Create New Wallet</p> </div> </a>
                 
-                <p><input type="submit" value="Login" name="action2"></p>
-                
+            <a href="login.jsp"> <div id="button"> <p>Login</p> </div> </a> 
             
-            </form>
         </div>
     </body>
 </html>

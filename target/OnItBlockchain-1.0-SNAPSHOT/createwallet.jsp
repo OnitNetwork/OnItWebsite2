@@ -4,6 +4,8 @@
     Author     : sejal
 --%>
 
+<%@page import="com.onitbc.SignupHandler.keysAccessor"%>
+<%@page import="com.onitbc.KeyGen" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,12 +17,16 @@
     </head>
     <body>
         
+        <%
+            keysAccessor keyAcc = (keysAccessor) request.getAttribute("keys");
+            %>
+                
         <div class="login-box">
-            <img src="img/wallet1.png" class="logo">
-            
+            <img src="img/wallet1.png" class="logo">            
+                      
             <form action="transaction.jsp" method="POST">
                 <p>Public:</p><br>
-                <label>02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</label><br><br>  
+                <label><c:keyAcc.pubKey></label><br><br>
                 <p>Private:</p><br>
                 <label>SzavMBLoXU6kDrqtUVmffv</label><br><br>
                 <h2>COPY THIS DOWN</h2>
