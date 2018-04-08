@@ -56,6 +56,7 @@ public class loginHandler extends HttpServlet {
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
             out.println("<meta charset=\"UTF-8\">");
             out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+            out.println("<link rel=\"shortcut icon\" type=\"image/png\" href=\"img/favicon.ico\"/>");
             out.println("</head>");
             out.println("<body>");
 
