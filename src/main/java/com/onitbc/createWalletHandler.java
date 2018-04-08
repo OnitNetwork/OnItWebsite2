@@ -41,7 +41,6 @@ public class createWalletHandler extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -51,27 +50,7 @@ public class createWalletHandler extends HttpServlet {
      * @return 
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     */        
-    
-    /*public String getKeyPair(String s) {
-        KeyGen.generateKeyPair();
-        String response = "oops";
-        
-        if ( null != s ) switch (s) {
-            case "puKey":
-                response = new String(Base64.encode(KeyGen.publicKey.getEncoded()));
-                break;
-            case "prKey":
-                response = new String(Base64.encode(KeyGen.privateKey.getEncoded()));
-                break;
-            case "puAdd":
-                response = HashGen.translate(new String(Base64.encode(KeyGen.publicKey.getEncoded())));
-                break;
-            default:
-                break;
-        }
-        return response;
-    }*/
+     */       
     
     public String getKeyPair() {
         KeyGen.generateKeyPair();
@@ -88,21 +67,7 @@ public class createWalletHandler extends HttpServlet {
                 + new String(Base64.encode(KeyGen.privateKey.getEncoded()))
                 + "</p></label><br><br>";
         return keys;
-    }
-    
-    /*public String getPrivateKey() {
-        KeyGen.generateKeyPair();
-        String prKey = "<p>" + new String(Base64.encode(KeyGen.privateKey.getEncoded())) + "</p>";        
-        return prKey;
-    }
-    
-    public String getPublicKey() {
-        String puKey = new String(Base64.encode(KeyGen.publicKey.getEncoded()));
-        return puKey;
-    }
-    
-        String puAdd = HashGen.translate(new String(Base64.encode(KeyGen.publicKey.getEncoded())));*/
-    
+    }    
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
