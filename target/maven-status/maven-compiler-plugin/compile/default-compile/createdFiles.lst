@@ -1,3 +1,4 @@
+com/onitbc/loginHandler.class
+com/onitbc/createWalletHandler.class
 com/onitbc/KeyGen.class
-com/onitbc/SignupHandler.class
 com/onitbc/HashGen.class
