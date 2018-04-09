@@ -24,7 +24,7 @@ import org.bouncycastle.util.encoders.Base64;
  *
  * @author bryce
  */
-@WebServlet(name = "createWalletHandler", urlPatterns = {"/createWalletHandler"})
+@WebServlet(name = "createWalletHandler", urlPatterns = {"/createWallet"})
 public class createWalletHandler extends HttpServlet {
 
     /**
@@ -84,7 +84,7 @@ public class createWalletHandler extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>OnIt - Create New Wallet</title>");
+            out.println("<title>Onit - Create New Wallet</title>");
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
             out.println("<meta charset=\"UTF-8\">");
             out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");

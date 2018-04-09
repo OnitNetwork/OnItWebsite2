@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OnIt - Transaction</title>
+	<title>Onit - Transaction</title>
 	<link rel="stylesheet" href="css/transaction.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -19,7 +19,7 @@
                 <div id="headerContainer"><div id="header">
 			<div id="title">
                             <div><img id="img" src="img/Blockchain.png"></div>
-                            <div id="headText"><h1>OnIt Blockchain</h1></div>
+                            <div id="headText"><h1>Onit Blockchain</h1></div>
 			</div>
 
 			<div id="wallet">

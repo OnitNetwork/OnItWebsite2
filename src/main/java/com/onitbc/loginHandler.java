@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author bryce
  */
-@WebServlet(name = "loginHandler", urlPatterns = {"/loginHandler"})
+@WebServlet(name = "loginHandler", urlPatterns = {"/login"})
 public class loginHandler extends HttpServlet {
 
     /**
@@ -52,7 +52,7 @@ public class loginHandler extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>OnIt - Login</title>");
+            out.println("<title>Onit - Login</title>");
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
             out.println("<meta charset=\"UTF-8\">");
             out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
