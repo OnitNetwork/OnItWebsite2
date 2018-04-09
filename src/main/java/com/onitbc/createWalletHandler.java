@@ -58,14 +58,20 @@ public class createWalletHandler extends HttpServlet {
         String prKey = new String(Base64.encode(KeyGen.privateKey.getEncoded()));
         String puAdd = HashGen.translate(new String(Base64.encode(KeyGen.publicKey.getEncoded())));
         
-        String keys = "<p style=\"margin: -5px auto -10px auto;\">Public:</p><br>"
-                + "<label><p style=\"word-wrap: break-word; font-size: 15px;\">" 
-                + new String(Base64.encode(KeyGen.publicKey.getEncoded())) 
-                + "</p></label><br><br>"
-                + "<p style=\"margin: -10px auto -10px auto;\">Private:</p><br>"
-                + "<label><p style=\"word-wrap: break-word; font-size: 15px;\">"
-                + new String(Base64.encode(KeyGen.privateKey.getEncoded()))
-                + "</p></label><br><br>";
+        String keys = "<p style=\"margin: -5px auto -10px auto;\">Public:</p><br>\n"
+                + "<p style=\"word-wrap: break-word; font-size: 15px;\">" 
+                + puKey
+                + "</p><br><br>\n"
+                + "<p style=\"margin: -10px auto -10px auto;\">Private:</p><br>\n"
+                + "<p style=\"word-wrap: break-word; font-size: 15px;\">"
+                + prKey
+                + "</p><br><br>\n"
+                + "<input type=\"hidden\" name=\"publicKey\" value=\""
+                + puKey + "\">\n"
+                + "<input type=\"hidden\" name=\"privateKey\" value=\""
+                + prKey + "\">\n"
+                + "<input type=\"hidden\" name=\"publicAddress\" value=\""
+                + puAdd + "\">\n";
         return keys;
     }    
     
