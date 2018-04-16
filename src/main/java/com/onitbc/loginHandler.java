@@ -33,7 +33,6 @@ public class loginHandler extends HttpServlet {
             throws ServletException, IOException {        
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -48,30 +47,8 @@ public class loginHandler extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Onit - Login</title>");
-            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
-            out.println("<meta charset=\"UTF-8\">");
-            out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-            out.println("<link rel=\"shortcut icon\" type=\"image/png\" href=\"img/favicon.ico\"/>");
-            out.println("</head>");
-            out.println("<body>");
-
-            out.println("<div class=\"login-box\">");
-            out.println("<img src=\"img/login.png\" class=\"logo\">");
-
-            out.println("<form action=\"transaction.jsp\" method=\"POST\">");
-            out.println("<p>Private Key:</p>");
-            out.println("<input type=\"text\" name=\"public\">");                
-            out.println("<p><input type=\"submit\" value=\"Login\"></p>");            
-            out.println("</form>");
-            out.println("</div>)");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        getServletConfig().getServletContext().getRequestDispatcher(
+                "/Login.jsp").forward(request,response);
     }
 
     /**
