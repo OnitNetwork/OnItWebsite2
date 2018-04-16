@@ -5,12 +5,10 @@
  */
 package com.onitbc;
 
-import java.io.IOException;
 import java.security.*;
 import java.security.spec.ECGenParameterSpec;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.bouncycastle.util.encoders.Base64;
 
 public class KeyGen {
 	
@@ -38,26 +36,6 @@ public class KeyGen {
 		}catch(Exception e) {
 			throw new RuntimeException(e);
 		}
-	}
-	
-	public static void main(String [] args) throws IOException {
-		
-		
-		generateKeyPair(); 
-		System.out.println(privateKey);
-		System.out.println(publicKey);
-		
-		
-		/**** BELOW IS WHAT NEEDS TO GET STORED AND DISPLAYED ON THE WEBSITE ******/
-		
-		//Private key
-		System.out.println(new String(Base64.encode(privateKey.getEncoded())));
-		//Public Key
-		System.out.println(new String(Base64.encode(publicKey.getEncoded())));
-		//Public address
-		System.out.println(HashGen.translate(new String(Base64.encode(publicKey.getEncoded()))));
-		
-        
 	}
 	
 }
