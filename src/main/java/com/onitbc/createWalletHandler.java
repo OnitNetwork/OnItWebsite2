@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.onitbc;
 
 import java.io.IOException;
@@ -24,10 +19,7 @@ import org.bouncycastle.util.encoders.Base64;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
-/**
- *
- * @author bryce
- */
+
 @WebServlet(name = "createWalletHandler", urlPatterns = {"/createWallet"})
 public class createWalletHandler extends HttpServlet {
 
@@ -111,6 +103,27 @@ public class createWalletHandler extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        response.setContentType("text/html");  
+        PrintWriter pw = response.getWriter();
+        
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;       
+        
+        try {            
+            String publicKey = request.getParameter("publicKey");
+            String privateKey = request.getParameter("privateKey");
+            String publicAddress = request.getParameter("publicAddress");
+            double balance = 100.00;
+            
+            String sql ="insert into users (prikey, pubkey, pubaddr, balance) "
+                    + "values (" + privateKey + ", " + publicKey + ", "
+                    + publicAddress +", " + balance + ")";
+            preparedStatement = conn.prepareStatement(sql);
+            
+        } catch (Exception e) {
+            pw.println(e);
+        }
     }
 
     /**
@@ -121,6 +134,6 @@ public class createWalletHandler extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Login
-    Created on : Apr 16, 2018, 2:35:56 PM
-    Author     : bryce
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

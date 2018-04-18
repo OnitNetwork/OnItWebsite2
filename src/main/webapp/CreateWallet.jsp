@@ -1,11 +1,4 @@
-<%-- 
-    Document   : CreateWallet
-    Created on : Apr 16, 2018, 2:20:31 PM
-    Author     : bryce
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>

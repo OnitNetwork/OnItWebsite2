@@ -1,8 +1,8 @@
-# Readme for the OnIt Blockchain website.
+# Readme for the Onit Blockchain website.
 
 ---
 
-This is the official repo for the OnIt Blockchain service's website.
+This is the official repo for the Onit Blockchain service's website.
 
 Head to [Our Website](https://onitnetwork.herokuapp.com "Onit Blockchain") for 100 free ONI tokens.
 
