@@ -58,35 +58,19 @@ public class createWalletHandler extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */       
     
-    public String getKeyPair() {
-        KeyGen.generateKeyPair();
-        String puKey = new String(Base64.encode(KeyGen.publicKey.getEncoded()));
-        String prKey = new String(Base64.encode(KeyGen.privateKey.getEncoded()));
-        String puAdd = HashGen.translate(new String(Base64.encode(KeyGen.publicKey.getEncoded())));
-        
-        String keys = "<p style=\"margin: -5px auto -10px auto;\">Public:</p><br>\n"
-                + "<p style=\"word-wrap: break-word; font-size: 15px;\">" 
-                + puKey
-                + "</p><br><br>\n"
-                + "<p style=\"margin: -10px auto -10px auto;\">Private:</p><br>\n"
-                + "<p style=\"word-wrap: break-word; font-size: 15px;\">"
-                + prKey
-                + "</p><br><br>\n"
-                + "<input type=\"hidden\" name=\"publicKey\" value=\""
-                + puKey + "\">\n"
-                + "<input type=\"hidden\" name=\"privateKey\" value=\""
-                + prKey + "\">\n"
-                + "<input type=\"hidden\" name=\"publicAddress\" value=\""
-                + puAdd + "\">\n";
-        return keys;
-    }    
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         
-        request.setAttribute("display data", getKeyPair());
+        KeyGen.generateKeyPair();
+        String puKey = new String(Base64.encode(KeyGen.publicKey.getEncoded()));
+        String prKey = new String(Base64.encode(KeyGen.privateKey.getEncoded()));
+        String puAdd = HashGen.translate(new String(Base64.encode(KeyGen.publicKey.getEncoded())));
+        
+        request.setAttribute("pukey", puKey);        
+        request.setAttribute("prkey", prKey);
+        request.setAttribute("pudd", puAdd);
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/CreateWallet.jsp").forward(request,response);
     }

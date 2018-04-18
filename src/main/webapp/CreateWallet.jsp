@@ -10,11 +10,17 @@
     </head>
     <body>
         <div class="login-box">
-        <img src="img/wallet1.png" class="logo">
+            <img src="img/wallet1.png" class="logo">
+            <h2>Public</h2>
+            <p><% out.print(request.getAttribute("pukey")); %></p>
+            <h2>Private:</h2>
+            <p><% out.print(request.getAttribute("prkey")); %></p>
+            <h3>COPY THIS DOWN</h3>
             <form action="createWallet" method="POST">
-                <% out.print(request.getAttribute("display data")); %>
-                <h2>COPY THIS DOWN</h2>
                 <p><input type="submit" value="Continue"></p>
+                <input type="hidden" name="publicKey" value="<% request.getAttribute("pukey"); %>">
+                <input type="hidden" name="privateKey" value="<% request.getAttribute("prkey"); %>">
+                <input type="hidden" name="publicAddress" value="<% request.getAttribute("puadd"); %>">
             </form>
         </div>
     </body>
