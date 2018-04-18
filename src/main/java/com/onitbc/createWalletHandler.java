@@ -107,7 +107,6 @@ public class createWalletHandler extends HttpServlet {
         response.setContentType("text/html");  
         PrintWriter pw = response.getWriter();
         
-        Connection conn = null;
         PreparedStatement preparedStatement = null;       
         
         try {            
@@ -117,13 +116,32 @@ public class createWalletHandler extends HttpServlet {
             double balance = 100.00;
             
             String sql ="insert into users (prikey, pubkey, pubaddr, balance) "
-                    + "values (" + privateKey + ", " + publicKey + ", "
-                    + publicAddress +", " + balance + ")";
+                    + "values (\'" + privateKey + "\', \'" + publicKey
+                    + "\', \'" + publicAddress +"\', \'" + balance + "\')";
+            
+            Connection conn = getConnection();
             preparedStatement = conn.prepareStatement(sql);
             
-        } catch (Exception e) {
+            preparedStatement.setString(1, publicKey);
+            preparedStatement.setString(2, privateKey);
+            preparedStatement.setString(3, publicAddress);
+            preparedStatement.setDouble(4, balance);
+            
+            int i = preparedStatement.executeUpdate();
+            String msg = " ";
+            if ( i != 0) {
+                msg = "Record has been inserted";
+                pw.println("<font size='6' color=white>" + msg + "</font>");
+            } else {
+                msg = "failed to insert data";
+                pw.println("<font size='6' color=white>" + msg + "</font>");
+            }
+            preparedStatement.close();
+        }
+        catch (Exception e) {
             pw.println(e);
         }
+        response.sendRedirect("transaction.jsp");
     }
 
     /**
