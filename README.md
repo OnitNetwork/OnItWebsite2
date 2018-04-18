@@ -10,6 +10,6 @@ Created by:
 - Jonathan Byrne
 - Sejal Patel
 - Bryce Ohmer
-- Elanor Kelly
+- Eleanor Kelly
 - Matthew Boyd
 - Eshan Sharma
