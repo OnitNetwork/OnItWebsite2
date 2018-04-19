@@ -18,9 +18,9 @@
             <h2>COPY THIS DOWN</h2>
             <form action="createWallet" method="POST">
                 <p style="text-align: center;"><input type="submit" value="Continue"></p>
-                <input type="hidden" name="publicKey" value="<% request.getAttribute("pukey"); %>">
-                <input type="hidden" name="privateKey" value="<% request.getAttribute("prkey"); %>">
-                <input type="hidden" name="publicAddress" value="<% request.getAttribute("puadd"); %>">
+                <input type="hidden" name="publicKey" value="<% out.print(request.getAttribute("pukey")); %>">
+                <input type="hidden" name="privateKey" value="<% out.print(request.getAttribute("prkey")); %>">
+                <input type="hidden" name="publicAddress" value="<% out.print(request.getAttribute("puadd")); %>">
             </form>
         </div>
     </body>

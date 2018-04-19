@@ -125,7 +125,6 @@ public class createWalletHandler extends HttpServlet {
         catch (Exception e) {
             pw.println(e);
         }
-        response.sendRedirect("transaction.jsp");
     }
 
     /**
