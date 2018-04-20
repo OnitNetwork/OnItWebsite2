@@ -73,6 +73,8 @@ public class createWalletHandler extends HttpServlet {
         request.setAttribute("puadd", puAdd);
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/CreateWallet.jsp").forward(request,response);
+        getServletConfig().getServletContext().getRequestDispatcher(
+                "/NewWalletSuccess.jsp").forward(request,response);
     }
 
     /**
@@ -124,6 +126,7 @@ public class createWalletHandler extends HttpServlet {
         catch (Exception e) {
             pw.println(e);
         }
+        response.sendRedirect("Login.jsp");
     }
 
     /**

@@ -12,12 +12,12 @@
         <div class="login-box">
             <img src="img/wallet1.png" class="logo">
             <h2>Public Key:</h2>
-            <p style="word-wrap: break-word; font-size: 15px;"><% out.print(request.getAttribute("pukey")); %></p>
+            <p id="pukey" style="word-wrap: break-word; font-size: 15px;"><% out.print(request.getAttribute("pukey")); %></p>
             <h2>Private:</h2>
             <p style="word-wrap: break-word; font-size: 15px;"><% out.print(request.getAttribute("prkey")); %></p>
-            <h2>COPY THIS DOWN</h2>
+            <h2>Copy this now, there's no way to get it back later.</h2>
             <form action="createWallet" method="POST">
-                <p style="text-align: center;"><input type="submit" value="Continue"></p>
+                <p style="text-align: center;"><input type="submit" value="Continue to Login Page"></p>
                 <input type="hidden" name="publicKey" value="<% out.print(request.getAttribute("pukey")); %>">
                 <input type="hidden" name="privateKey" value="<% out.print(request.getAttribute("prkey")); %>">
                 <input type="hidden" name="publicAddress" value="<% out.print(request.getAttribute("puadd")); %>">
