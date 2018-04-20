@@ -100,8 +100,7 @@ public class createWalletHandler extends HttpServlet {
             double balance = 100.00;
             
             String sql ="insert into users (prikey, pubkey, pubaddr, balance) "
-                    + "values (\'" + privateKey + "\', \'" + publicKey
-                    + "\', \'" + publicAddress +"\', \'" + balance + "\')";
+                    + "values (?,?,?,?)";
             
             Connection conn = getConnection();
             preparedStatement = conn.prepareStatement(sql);
