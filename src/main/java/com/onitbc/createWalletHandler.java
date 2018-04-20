@@ -70,7 +70,7 @@ public class createWalletHandler extends HttpServlet {
         
         request.setAttribute("pukey", puKey);        
         request.setAttribute("prkey", prKey);
-        request.setAttribute("pudd", puAdd);
+        request.setAttribute("puadd", puAdd);
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/CreateWallet.jsp").forward(request,response);
     }

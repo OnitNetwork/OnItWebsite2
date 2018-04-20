@@ -11,7 +11,7 @@
     <body>
         <div class="login-box">
             <img src="img/wallet1.png" class="logo">
-            <h2>Public</h2>
+            <h2>Public Key:</h2>
             <p style="word-wrap: break-word; font-size: 15px;"><% out.print(request.getAttribute("pukey")); %></p>
             <h2>Private:</h2>
             <p style="word-wrap: break-word; font-size: 15px;"><% out.print(request.getAttribute("prkey")); %></p>
