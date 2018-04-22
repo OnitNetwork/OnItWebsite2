@@ -1,16 +1,10 @@
-<%-- 
-    Document   : transaction
-    Created on : Feb 26, 2018, 12:08:57 PM
-    Author     : sejal
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Onit - Transaction</title>
-	<link rel="stylesheet" href="css/transaction.css">
+	<link rel="stylesheet" href="css/dashboard.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
 </head>

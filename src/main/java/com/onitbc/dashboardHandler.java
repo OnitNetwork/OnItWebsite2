@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "loginHandler", urlPatterns = {"/login"})
-public class loginHandler extends HttpServlet {
+@WebServlet(name = "dashboardHandler", urlPatterns = {"/dashboard"})
+public class dashboardHandler extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -21,9 +21,9 @@ public class loginHandler extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
+            throws ServletException, IOException {
     }
-
+    
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -39,7 +39,7 @@ public class loginHandler extends HttpServlet {
         processRequest(request, response);
         
         getServletConfig().getServletContext().getRequestDispatcher(
-                "/Login.jsp").forward(request,response);
+                "/Dashboard.jsp").forward(request,response);
     }
 
     /**
@@ -54,8 +54,6 @@ public class loginHandler extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        response.sendRedirect("dashboard");
     }
 
     /**

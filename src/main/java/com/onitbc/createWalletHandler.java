@@ -44,7 +44,6 @@ public class createWalletHandler extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
     }
 
     /**
@@ -73,8 +72,6 @@ public class createWalletHandler extends HttpServlet {
         request.setAttribute("puadd", puAdd);
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/CreateWallet.jsp").forward(request,response);
-        getServletConfig().getServletContext().getRequestDispatcher(
-                "/NewWalletSuccess.jsp").forward(request,response);
     }
 
     /**
@@ -116,17 +113,17 @@ public class createWalletHandler extends HttpServlet {
             String msg = " ";
             if ( i != 0) {
                 msg = "Record has been inserted";
-                pw.println("<font size='6' color=white>" + msg + "</font>");
+                pw.println("<font size='6' color=red>" + msg + "</font>");
             } else {
                 msg = "failed to insert data";
-                pw.println("<font size='6' color=white>" + msg + "</font>");
+                pw.println("<font size='6' color=red>" + msg + "</font>");
             }
             preparedStatement.close();
         }
         catch (Exception e) {
             pw.println(e);
         }
-        response.sendRedirect("Login.jsp");
+        response.sendRedirect("login");
     }
 
     /**

@@ -11,7 +11,7 @@
     <body>
         <div class="login-box">
         <img src="img/login.png" class="logo">
-            <form action="transaction.jsp" method="POST">
+            <form action="login" method="POST">
                 <p>Private Key:</p>
                 <input type="text" name="public">
                 <p><input type="submit" value="Login"></p>
