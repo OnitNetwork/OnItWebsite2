@@ -15,14 +15,14 @@
                         <div id="headText"><h1>Onit Blockchain</h1></div>
                     </div>
 
-                    <div id="wallet">
-                        <h2>Wallet Balance: <strong>100 ONI</strong></h2>
-                    </div>
-                    
                     <div id="logout">
                         <a href="logout"><h3>Logout</h3></a>
                     </div>
                 </div></div>
+
+            <div id="wallet">
+                <h2>Wallet Balance: <strong>100 ONI</strong></h2>
+            </div>
 
             <div id="body">
                 <div id="send" class="bodyCats">
@@ -37,15 +37,8 @@
                 <div id="receive" class="bodyCats">
                     <div>
                         <div class="sectionHead">Receive</div>
-                        <div id="mobiRecBody"><a href='#'>Click to show Public Key</a></div>
-                        <div id="dsktpRecBody"><a href="#">02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a></div>
-                    </div>
-                </div>
-
-                <div id="transactions" class="bodyCats">
-                    <div>
-                        <div class="sectionHead">Transactions</div>
-                        <div id="transactionBody">Nothing to show here... Yet!</div>
+                        <div id="mobiRecBody"><a href='#'>Click to copy Public Key</a></div>
+                        <div id="dsktpRecBody"><a href="#" title="Click to copy">02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a></div>
                     </div>
                 </div>
             </div>
