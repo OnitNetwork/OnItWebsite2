@@ -62,8 +62,9 @@ public class loginHandler extends HttpServlet {
         String privateKey = request.getParameter("privateKey");
         
         if ( loginValidate.checkUser(privateKey) ) {
-            RequestDispatcher rs = request.getRequestDispatcher("dashboard");
-            rs.forward(request,response);
+            out.println("PK Found!");
+            /*RequestDispatcher rs = request.getRequestDispatcher("dashboard");
+            rs.forward(request,response);*/
         } else {
             out.println("PK Not Found...");
         }
