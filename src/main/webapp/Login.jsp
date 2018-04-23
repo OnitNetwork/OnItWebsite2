@@ -13,7 +13,7 @@
         <img src="img/login.png" class="logo">
             <form action="login" method="POST">
                 <p>Private Key:</p>
-                <input type="text" name="public">
+                <input type="text" name="privateKey">
                 <p><input type="submit" value="Login"></p>
             </form>
         </div>

@@ -2,6 +2,7 @@ package com.onitbc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,7 +56,19 @@ public class loginHandler extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        response.sendRedirect("dashboard");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String privateKey = request.getParameter("privateKey");
+        
+        if ( loginValidate.checkUser(privateKey) ) {
+            RequestDispatcher rs = request.getRequestDispatcher("dashboard");
+            rs.forward(request,response);
+        } else {
+            out.println("PK Not Found...");
+        }
+        
+        //response.sendRedirect("dashboard");
     }
 
     /**
