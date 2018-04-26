@@ -11,8 +11,7 @@
         <div id="container">
             <div id="headerContainer"><div id="header">
                     <div id="title">
-                        <div><img id="img" src="img/Blockchain.png"></div>
-                        <div id="headText"><h1>Onit Blockchain</h1></div>
+                        <div><img id="img" src="img/OnitTitle.png"></div>
                     </div>
 
                     <div id="logout">

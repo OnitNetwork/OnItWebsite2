@@ -94,6 +94,12 @@ h2 {
     left: calc(50% - 50px);
 }
 
+#bannerbox {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
 div#button {
     background-color: #1c8adb;
     padding: 1px;
@@ -109,9 +115,13 @@ div#button:hover {
 @media only screen and (min-width: 769px) {
 	.login-box { width:  720px;
                      height: 640px;}
+        #banner { height: 80%;
+                  width: 80%; }
 }
 
 @media only screen and (max-width: 768px) {
 	.login-box { width: 90%;
                      height: 90%;}
+        #banner { height: 120%;
+                  width: 120%; }
 }
