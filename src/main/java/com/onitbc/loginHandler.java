@@ -70,8 +70,7 @@ public class loginHandler extends HttpServlet {
             page = "loginFailed.html";
         }
         
-        RequestDispatcher rs = request.getRequestDispatcher(page);
-        rs.forward(request, response);
+        response.sendRedirect(page);
         
     }
 
