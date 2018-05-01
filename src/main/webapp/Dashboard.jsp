@@ -5,14 +5,14 @@
         <title>Onit - Transaction</title>
         <link rel="stylesheet" href="css/dashboard.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-              <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
     </head>
     <body>
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+            <div class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
                 <img id="logoimg" src="img/OnitTitle.png">
-            </a>
+            </div>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
                     <a class="nav-link" href="#">Sign out</a>
@@ -87,7 +87,7 @@
                             <div>
                                 <div class="sectionHead">Receive</div>
                                 <div id="mobiRecBody"><a href='#'>Click to copy Public Key</a></div>
-                                <div id="dsktpRecBody"><a href="#" title="Click to copy">02a1633cafcc01ebfb6d78e39f687a1f0995c62fc95f51ead10a02ee0be551b5dc</a></div>
+                                <div id="dsktpRecBody"><a href="#" title="Click to copy"></a></div>
                             </div>
                         </div>
                     </div>

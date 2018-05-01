@@ -2,7 +2,6 @@ package com.onitbc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,7 +63,6 @@ public class loginHandler extends HttpServlet {
         String page = "";
         
         if ( loginValidate.checkUser(privateKey) ) {
-            out.println("PK Found!");
             page = "dashboard";
         } else {
             page = "loginFailed.html";
@@ -73,15 +71,4 @@ public class loginHandler extends HttpServlet {
         response.sendRedirect(page);
         
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }
-
 }
