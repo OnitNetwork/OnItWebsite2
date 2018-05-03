@@ -5,10 +5,32 @@
         <title>Onit - Transaction</title>
         <link rel="stylesheet" href="css/dashboard.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+              <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
     </head>
     <body>
+
+        <div class="modal fade" id="keys" tabindex="-1" role="dialog" aria-labelledby="keys" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Your Keys and Address</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Private Key: <% out.print(request.getAttribute("privateKey")); %> <br>
+                        Public Key: <% out.print(request.getAttribute("publicKey")); %> <br>
+                        Public Address: <% out.print(request.getAttribute("publicAddress")); %>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
             <div class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
                 <img id="logoimg" src="img/OnitTitle.png">
@@ -38,7 +60,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#keys">
                                     <span data-feather="file"></span>
                                     View Your Keys
                                 </a>
@@ -88,7 +110,7 @@
                             <div>
                                 <div class="sectionHead">Receive</div>
                                 <div id="mobiRecBody"><a href='#'>Click to copy Public Key</a></div>
-                                <div id="dsktpRecBody"><a href="#" title="Click to copy"><% out.print(request.getAttribute("publicAddress")); %></a></div>
+                                <div id="dsktpRecBody"><a href="#" title="Click to copy"><% out.print(request.getAttribute("publicAddress"));%></a></div>
                             </div>
                         </div>
                     </div>
