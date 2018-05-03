@@ -20,9 +20,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Private Key: <% out.print(request.getAttribute("privateKey")); %> <br>
-                        Public Key: <% out.print(request.getAttribute("publicKey")); %> <br>
-                        Public Address: <% out.print(request.getAttribute("publicAddress")); %>
+                        <p style="word-wrap: break-word;">Private Key: <% out.print(request.getAttribute("privateKey")); %></p>
+                        <p style="word-wrap: break-word;">Public Key: <% out.print(request.getAttribute("publicKey")); %></p>
+                        <p style="word-wrap: break-word;">Public Address: <% out.print(request.getAttribute("publicAddress")); %></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
