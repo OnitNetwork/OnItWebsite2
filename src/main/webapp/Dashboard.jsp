@@ -71,7 +71,7 @@
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h1 class="h2">Dashboard</h1>
-                        <h1 class="h2">Balance: <% out.print(request.getAttribute("balance")); %></h1>
+                        <h1 class="h2">Balance: <% out.print(request.getAttribute("balance")); %> oni</h1>
                     </div>
 
                     <div id="body" class="pb-5 mb-5">
