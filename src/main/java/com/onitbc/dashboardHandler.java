@@ -55,6 +55,9 @@ public class dashboardHandler extends HttpServlet {
 
         if (cookie != null) {
             String privateKey = cookie[0].getValue();
+                    
+            request.setAttribute("privateKey", privateKey);
+            
             if (!privateKey.equals("") || privateKey != null) {
                 PrintWriter pw = response.getWriter();
 
@@ -81,12 +84,10 @@ public class dashboardHandler extends HttpServlet {
                     rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
                     
                     while (rs.next()) {
-                        double publicKey = rs.getDouble(1);
+                        String publicKey = rs.getString(1);
                         request.setAttribute("publicKey", publicKey);
                     }
                     rs.close();
-                    
-                    request.setAttribute("privateKey", privateKey);
                     
                     st.close();                   
                 } 
