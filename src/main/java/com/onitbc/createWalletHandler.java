@@ -104,8 +104,8 @@ public class createWalletHandler extends HttpServlet {
             Connection conn = getConnection();
             preparedStatement = conn.prepareStatement(sql);
             
-            preparedStatement.setString(1, publicKey);
-            preparedStatement.setString(2, privateKey);
+            preparedStatement.setString(1, privateKey);
+            preparedStatement.setString(2, publicKey);
             preparedStatement.setString(3, publicAddress);
             preparedStatement.setDouble(4, balance);
             
