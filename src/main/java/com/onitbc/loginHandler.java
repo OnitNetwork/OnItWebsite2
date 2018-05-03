@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 
 @WebServlet(name = "loginHandler", urlPatterns = {"/login"})
 public class loginHandler extends HttpServlet {
@@ -68,6 +69,8 @@ public class loginHandler extends HttpServlet {
             page = "loginFailed.html";
         }
         
+        Cookie cookie = new Cookie("pK", privateKey);
+        response.addCookie(cookie);
         response.sendRedirect(page);
         
     }

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 
 @WebServlet(name = "dashboardHandler", urlPatterns = {"/dashboard"})
 public class dashboardHandler extends HttpServlet {
@@ -40,6 +41,18 @@ public class dashboardHandler extends HttpServlet {
         
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/Dashboard.jsp").forward(request,response);
+        
+        Cookie cookie[] = request.getCookies();
+        
+        if (cookie!=null) {
+            String privateKey = cookie[0].getValue();
+            if (!privateKey.equals("") || privateKey != null) {
+                //sql
+            }
+            else {
+                //login first
+            }
+        }
     }
 
     /**
