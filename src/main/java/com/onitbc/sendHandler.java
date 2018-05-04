@@ -95,7 +95,7 @@ public class sendHandler extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
+
         String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
         String hashed = HashGen.translate(timestamp);
 
@@ -105,9 +105,10 @@ public class sendHandler extends HttpServlet {
         String privateKey = cookie[0].getValue();
 
         double sendAmount = Double.parseDouble(request.getParameter("sendAmount"));
-        String sendAddr = request.getParameter("sendAddress");
+        String toAddr = request.getParameter("sendAddress");
         double recipientBalance = 0;
         double balance = 0;
+        String senderAddress = "";
 
         try {
             Connection conn = getConnection();
@@ -130,23 +131,28 @@ public class sendHandler extends HttpServlet {
                 Connection conn = getConnection();
                 Statement st = conn.createStatement();
 
-                ResultSet rs = st.executeQuery("select pubaddr from users where pubaddr=" + "'" + sendAddr + "';");
+                ResultSet rs = st.executeQuery("select pubaddr from users where pubaddr=" + "'" + toAddr + "';");
 
                 if (rs.next()) {
-                    rs = st.executeQuery("select balance from users where pubaddr=" + "'" + sendAddr + "';");
+                    rs = st.executeQuery("select balance from users where pubaddr=" + "'" + toAddr + "';");
                     while (rs.next()) {
                         recipientBalance += rs.getDouble(1);
+                    }
+                    
+                    rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
+                    while (rs.next()) {
+                        senderAddress = rs.getString(1);
                     }
 
                     double senderFinalBalance = balance - sendAmount;
                     double recipientFinalBalance = recipientBalance + sendAmount;
-                    
+
                     conn.setAutoCommit(false);
-                    
+
                     st.executeUpdate("update users set balance = " + senderFinalBalance + " where prikey = '" + privateKey + "';");
-                    st.executeUpdate("update users set balance = " + recipientFinalBalance + " where pubaddr = '" + sendAddr + "';");
-                    st.executeUpdate("insert into transactions (amount_sent, hash, sending_addr, receiving_addr) values (" + sendAmount +
-                            ", " + "'" + hashed + "', 'none', '" + sendAddr + "');");
+                    st.executeUpdate("update users set balance = " + recipientFinalBalance + " where pubaddr = '" + toAddr + "';");
+                    st.executeUpdate("insert into transactions (amount_sent, hash, sending_addr, receiving_addr) values (" + sendAmount
+                            + ", " + "'" + hashed + "', '" + senderAddress + "', '" + toAddr + "');");
                     st.close();
                     conn.commit();
                     conn.close();
