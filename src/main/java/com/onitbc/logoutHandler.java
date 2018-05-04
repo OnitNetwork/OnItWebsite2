@@ -39,9 +39,16 @@ public class logoutHandler extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        Cookie cookie = new Cookie("pK", "");
+        /*Cookie cookie = new Cookie("pK", "");
         cookie.setMaxAge(0);
-        response.addCookie(cookie);
+        response.addCookie(cookie);*/
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            cookie.setMaxAge(0);
+            cookie.setValue(null);
+            cookie.setPath("/");
+            response.addCookie(cookie);
+        }
         response.sendRedirect("index.html");
     }
 
