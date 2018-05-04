@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Cookie;
 import java.sql.*;
+import java.util.ArrayList;
 
 @WebServlet(name = "dashboardHandler", urlPatterns = {"/dashboard"})
 public class dashboardHandler extends HttpServlet {
@@ -50,6 +51,8 @@ public class dashboardHandler extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        ArrayList tableData = new ArrayList();
 
         Cookie cookie[] = request.getCookies();
 
@@ -91,6 +94,19 @@ public class dashboardHandler extends HttpServlet {
                     while (rs.next()) {
                         String puK = rs.getString(1);
                         request.setAttribute("publicKey", puK);
+                    }
+                    rs.close();
+                    
+                    rs = st.executeQuery("select * from transactions");
+                    
+                    while (rs.next()) {
+                        tablePopulator row = new tablePopulator();
+                        row.setHeight(rs.getInt("id"));
+                        row.setSent(rs.getDouble("amount_sent"));
+                        row.setAge(rs.getString("timestamp"));
+                        row.setHash(rs.getString("hash"));
+                        tableData.add(row);
+                        request.setAttribute("tableData", tableData);
                     }
                     rs.close();
                     st.close();                   

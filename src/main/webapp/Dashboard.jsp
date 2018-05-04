@@ -121,12 +121,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Genesis</td>
-                                    <td>1d</td>
-                                    <td>0 ONI</td>
-                                    <td><a href="#">view</a></td>
-                                </tr>
+                                <c:forEach items="${tableData}" var="tableData">
+                                    <tr>
+                                        <td>${tableData.row}</td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
