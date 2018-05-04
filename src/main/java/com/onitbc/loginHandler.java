@@ -37,10 +37,8 @@ public class loginHandler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        processRequest(request, response);        
         
-        Cookie cookie = new Cookie("JSESSIONID", "");
-        response.addCookie(cookie);
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/Login.jsp").forward(request,response);
     }
@@ -72,6 +70,8 @@ public class loginHandler extends HttpServlet {
         }
         
         Cookie cookie = new Cookie("pK", privateKey);
+        response.addCookie(cookie);
+        cookie = new Cookie("JSESSIONID", "");
         response.addCookie(cookie);
         response.sendRedirect(page);
         
