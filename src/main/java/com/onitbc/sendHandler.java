@@ -104,12 +104,9 @@ public class sendHandler extends HttpServlet {
         double balance = Double.parseDouble(request.getParameter("balance"));
         String sendAddr = request.getParameter("sendAddress");
         double recipientBalance = 0;
-
+        
         if (balance - sendAmount < 0) {
-            response.setContentType("text/html");
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('Gotta send at least as much as you have, guy');");
-            out.println("</script>");
+            request.setAttribute("notify", "Not enough in your piggy bank");
         } else {            
             try {
                 Connection conn = getConnection();
