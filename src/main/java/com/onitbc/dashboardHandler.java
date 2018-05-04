@@ -77,6 +77,22 @@ public class dashboardHandler extends HttpServlet {
                         request.setAttribute("balance", bal);
                     }
                     rs.close();
+                    
+                    rs = st.executeQuery("select prikey from users where prikey=" + "'" + privateKey + "';");
+                    
+                    while (rs.next()) {
+                        double prK = rs.getDouble(1);
+                        request.setAttribute("privateKey", prK);
+                    }
+                    rs.close();
+                    
+                    rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
+                    
+                    while (rs.next()) {
+                        double puK = rs.getDouble(1);
+                        request.setAttribute("publicKey", puK);
+                    }
+                    rs.close();
                     st.close();                   
                 } 
                 catch (Exception e) {
