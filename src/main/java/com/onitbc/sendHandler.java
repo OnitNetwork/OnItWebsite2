@@ -143,7 +143,7 @@ public class sendHandler extends HttpServlet {
                     
                     conn.setAutoCommit(false);
                     
-                    st.executeUpdate("update users set balance = " + senderFinalBalance + " where pubaddr = '" + privateKey + "';");
+                    st.executeUpdate("update users set balance = " + senderFinalBalance + " where prikey = '" + privateKey + "';");
                     st.executeUpdate("update users set balance = " + recipientFinalBalance + " where pubaddr = '" + sendAddr + "';");
                     st.executeUpdate("insert into transactions (amount_sent, hash, sending_addr, receiving_addr) values (" + sendAmount +
                             ", " + "'" + hashed + "', 'none', '" + sendAddr + "');");
