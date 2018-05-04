@@ -65,7 +65,8 @@ public class dashboardHandler extends HttpServlet {
                     Connection conn = getConnection();
                     
                     Statement st = conn.createStatement();
-                    ResultSet rs = st.executeQuery("select pubaddr from users where prikey=" + "'" + privateKey + "';");                    
+                    ResultSet rs = st.executeQuery("select pubaddr from users where prikey=" + "'" + privateKey + "';");
+                    rs.close();
                     
                     while (rs.next()) {
                         String pA = rs.getString(1);
