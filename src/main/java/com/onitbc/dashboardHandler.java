@@ -70,25 +70,25 @@ public class dashboardHandler extends HttpServlet {
                     
                     while (rs.next()) {
                         String pA = rs.getString(1);
+                        rs.close();
                         request.setAttribute("publicAddress", pA);
                     }
-                    rs.close();
                     
                     rs = st.executeQuery("select balance from users where prikey=" + "'" + privateKey + "';");
                     
                     while (rs.next()) {
                         double bal = rs.getDouble(1);
+                        rs.close();
                         request.setAttribute("balance", bal);
                     }
-                    rs.close();
                     
                     rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
                     
                     while (rs.next()) {
                         String publicKey = rs.getString(1);
+                        rs.close();
                         request.setAttribute("publicKey", publicKey);
                     }
-                    rs.close();
                     
                     st.close();                   
                 } 
