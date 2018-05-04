@@ -55,9 +55,6 @@ public class dashboardHandler extends HttpServlet {
 
         if (cookie != null) {
             String privateKey = cookie[0].getValue();
-                    
-            request.setAttribute("privateKey", privateKey);
-            
             if (!privateKey.equals("") || privateKey != null) {
                 PrintWriter pw = response.getWriter();
 
@@ -65,31 +62,21 @@ public class dashboardHandler extends HttpServlet {
                     Connection conn = getConnection();
                     
                     Statement st = conn.createStatement();
-                    ResultSet rs = st.executeQuery("select pubaddr from users where prikey=" + "'" + privateKey + "';");
-                    rs.close();
+                    ResultSet rs = st.executeQuery("select pubaddr from users where prikey=" + "'" + privateKey + "';");                    
                     
                     while (rs.next()) {
                         String pA = rs.getString(1);
-                        rs.close();
                         request.setAttribute("publicAddress", pA);
                     }
+                    rs.close();
                     
                     rs = st.executeQuery("select balance from users where prikey=" + "'" + privateKey + "';");
                     
                     while (rs.next()) {
                         double bal = rs.getDouble(1);
-                        rs.close();
                         request.setAttribute("balance", bal);
                     }
-                    
-                    rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
-                    
-                    while (rs.next()) {
-                        String publicKey = rs.getString(1);
-                        rs.close();
-                        request.setAttribute("publicKey", publicKey);
-                    }
-                    
+                    rs.close();
                     st.close();                   
                 } 
                 catch (Exception e) {
