@@ -102,8 +102,7 @@
                         <div id="receive" class="bodyCats">
                             <div>
                                 <div class="sectionHead">Receive</div>
-                                <div id="mobiRecBody"><a href='#'>Click to copy Public Key</a></div>
-                                <div id="dsktpRecBody"><a href="#" title="Click to copy"><% out.print(request.getAttribute("publicAddress"));%></a></div>
+                                <div id="dsktpRecBody"><% out.print(request.getAttribute("publicAddress"));%></div>
                             </div>
                         </div>
                     </div>

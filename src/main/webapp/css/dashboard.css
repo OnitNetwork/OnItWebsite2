@@ -86,12 +86,8 @@ sectionHead {
 
 #dsktpRecBody {
     width: 100%;
-    margin-top: 5%;
-}
-
-#mobiRecBody {
-    width: 100%;
     margin-top: 15%;
+    font-weight: bold;
 }
 
 .bodyCats {
@@ -121,12 +117,6 @@ sectionHead {
     margin-top: 15%;    
 }
 
-/*desktop*/
-@media only screen and (min-width: 769px) {
-    #mobiRecBody { display: none }
-} 
-
-/*mobile*/
-@media only screen and (max-width: 768px) {
-    #dsktpRecBody { display: none }
+.table-responsive td {
+    text-align: center;
 }
