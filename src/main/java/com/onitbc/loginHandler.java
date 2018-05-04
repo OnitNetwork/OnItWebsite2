@@ -39,6 +39,14 @@ public class loginHandler extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            cookie.setMaxAge(0);
+            cookie.setValue(null);
+            cookie.setPath("/");
+            response.addCookie(cookie);
+        }
+        
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/Login.jsp").forward(request,response);
     }
