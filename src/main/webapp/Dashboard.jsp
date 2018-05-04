@@ -5,8 +5,8 @@
     <head>
         <title>Onit - Transaction</title>
         <link rel="stylesheet" href="css/dashboard.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-              <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
     </head>
     <body>
@@ -95,9 +95,7 @@
                         <div id="send" class="bodyCats">
                             <div class="sectionHead">Send</div>
                             <div id="sendBody">
-                                <input type="text" name="address" placeholder="Address" style="width: 300px;"><br>
-                                <input type="text" name="amnt" placeholder="Amount (ONI)" style="width: 200px;"><br>
-                                <input type="submit" name="send" value="Send" href="send" class="btn btn-primary">
+                                <a name="send" href="send" class="btn btn-primary">Click Here to go to Transaction Page</a>
                             </div>
                         </div>
 

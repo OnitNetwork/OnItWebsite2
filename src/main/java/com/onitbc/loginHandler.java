@@ -73,7 +73,6 @@ public class loginHandler extends HttpServlet {
         response.addCookie(cookie);
         cookie = new Cookie("JSESSIONID", "");
         response.addCookie(cookie);
-        response.sendRedirect(page);
-        
+        response.sendRedirect(page);        
     }
 }
