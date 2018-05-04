@@ -123,7 +123,10 @@
                             <tbody>
                                 <c:forEach items="${tableData}" var="tableData">
                                     <tr>
-                                        <td>${tableData.row}</td>
+                                        <td>${tableData.height}</td>
+                                        <td>${tableData.age}</td>
+                                        <td>${tableData.sent}</td>
+                                        <td>${tableData.hash}</td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
