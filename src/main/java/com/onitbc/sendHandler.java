@@ -136,9 +136,14 @@ public class sendHandler extends HttpServlet {
 
                     double senderFinalBalance = balance - sendAmount;
                     double recipientFinalBalance = recipientBalance + sendAmount;
-
+                    
+                    conn.setAutoCommit(false);
+                    
                     st.executeUpdate("update users set balance = " + senderFinalBalance + " where pubaddr = '" + sendAddr + "';");
                     st.executeUpdate("update users set balance = " + recipientFinalBalance + " where pubaddr = '" + privateKey + "';");
+                    st.close();
+                    conn.commit();
+                    conn.close();
                     response.sendRedirect("dashboard");
 
                 } else {

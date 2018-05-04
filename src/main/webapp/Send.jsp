@@ -17,7 +17,7 @@
             <label for="inputAmount" class="sr-only">Amount (ONI)</label>
             <input type="text" id="inputAmount" class="form-control" name="sendAmount" placeholder="Amount (ONI)" required>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
-            <div class="mt-5 mb-3 text-muted"><% out.print(request.getAttribute("notify")); %></div>
+            <div class="mt-5 mb-3 text-muted"></div>
         </form>
     </body>
 </html>
