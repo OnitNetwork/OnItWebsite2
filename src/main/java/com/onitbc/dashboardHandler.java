@@ -81,7 +81,7 @@ public class dashboardHandler extends HttpServlet {
                     rs = st.executeQuery("select prikey from users where prikey=" + "'" + privateKey + "';");
                     
                     while (rs.next()) {
-                        double prK = rs.getDouble(1);
+                        String prK = rs.getString(1);
                         request.setAttribute("privateKey", prK);
                     }
                     rs.close();
@@ -89,7 +89,7 @@ public class dashboardHandler extends HttpServlet {
                     rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
                     
                     while (rs.next()) {
-                        double puK = rs.getDouble(1);
+                        String puK = rs.getString(1);
                         request.setAttribute("publicKey", puK);
                     }
                     rs.close();
