@@ -6,16 +6,19 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "sendHandler", urlPatterns = {"/send"})
 public class sendHandler extends HttpServlet {
-    
+
     private static Connection getConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
@@ -39,7 +42,7 @@ public class sendHandler extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
     }
-   
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -52,9 +55,29 @@ public class sendHandler extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        
-        
+
+        Cookie cookie[] = request.getCookies();
+
+        String privateKey = cookie[0].getValue();
+        PrintWriter pw = response.getWriter();
+
+        try {
+            Connection conn = getConnection();
+
+            Statement st = conn.createStatement();
+
+            ResultSet rs = st.executeQuery("select balance from users where prikey=" + "'" + privateKey + "';");
+
+            while (rs.next()) {
+                double bal = rs.getDouble(1);
+                request.setAttribute("balance", bal);
+            }
+            rs.close();
+            st.close();
+        } catch (Exception e) {
+            pw.println(e);
+        }
+
         getServletConfig().getServletContext().getRequestDispatcher(
                 "/Send.jsp").forward(request, response);
     }
