@@ -10,7 +10,8 @@
     <body class="text-center">
         <form class="form-signin" action="send" method="POST">
             <img class="mb-4" src="img/OnitLogo.png" alt="" width="200" height="200">
-            <h1 name="balance" class="h3 mb-3 font-weight-normal">Balance: <% out.print(request.getAttribute("balance")); %> oni</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Balance</h1>
+            <h1 name="balance" class="h3 mb-3 font-weight-normal"><% out.print(request.getAttribute("balance")); %></h1>
             <label for="inputAddress" class="sr-only">Recipient's Address</label>
             <input type="text" id="inputAddress" class="form-control" name="sendAddress" placeholder="Recipient's Address" required autofocus>
             <label for="inputAmount" class="sr-only">Amount (ONI)</label>
