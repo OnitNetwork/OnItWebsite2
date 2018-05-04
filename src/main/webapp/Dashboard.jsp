@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,12 +55,6 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="shopping-cart"></span>
-                                    View Transactions
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="modal" data-target="#keys">
                                     <span data-feather="file"></span>
                                     View Your Keys
@@ -102,7 +97,7 @@
                             <div id="sendBody">
                                 <input type="text" name="address" placeholder="Address" style="width: 300px;"><br>
                                 <input type="text" name="amnt" placeholder="Amount (ONI)" style="width: 200px;"><br>
-                                <input type="submit" name="send" value="Send" class="btn btn-primary">
+                                <input type="submit" name="send" value="Send" href="send" class="btn btn-primary">
                             </div>
                         </div>
 
@@ -123,9 +118,7 @@
                                 <tr>
                                     <th>Height</th>
                                     <th>Age</th>
-                                    <th>Transactions</th>
                                     <th>Total Sent</th>
-                                    <th>Size (kB)</th>
                                     <th>Hash</th>
                                 </tr>
                             </thead>
@@ -133,9 +126,7 @@
                                 <tr>
                                     <td>Genesis</td>
                                     <td>1d</td>
-                                    <td>0</td>
                                     <td>0 ONI</td>
-                                    <td>0</td>
                                     <td><a href="#">view</a></td>
                                 </tr>
                             </tbody>

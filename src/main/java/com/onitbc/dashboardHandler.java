@@ -55,7 +55,7 @@ public class dashboardHandler extends HttpServlet {
 
         if (cookie != null) {
             String privateKey = cookie[0].getValue();
-            if (!privateKey.equals("") || privateKey != null) {
+            if (!privateKey.equals("")) {
                 PrintWriter pw = response.getWriter();
 
                 try {
