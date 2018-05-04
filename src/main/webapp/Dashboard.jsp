@@ -115,7 +115,7 @@
                             <thead>
                                 <tr>
                                     <th>Height</th>
-                                    <th>Age</th>
+                                    <th>Timestamp</th>
                                     <th>Total Sent</th>
                                     <th>Hash</th>
                                 </tr>

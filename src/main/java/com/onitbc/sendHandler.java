@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -94,6 +95,9 @@ public class sendHandler extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
+        String hashed = HashGen.translate(timestamp);
 
         PrintWriter out = response.getWriter();
 
@@ -142,7 +146,7 @@ public class sendHandler extends HttpServlet {
                     st.executeUpdate("update users set balance = " + senderFinalBalance + " where pubaddr = '" + privateKey + "';");
                     st.executeUpdate("update users set balance = " + recipientFinalBalance + " where pubaddr = '" + sendAddr + "';");
                     st.executeUpdate("insert into transactions (amount_sent, hash, sending_addr, receiving_addr) values (" + sendAmount +
-                            ", " + "'none', 'none', '" + sendAddr + "');");
+                            ", " + "'" + hashed + "', 'none', '" + sendAddr + "');");
                     st.close();
                     conn.commit();
                     conn.close();
