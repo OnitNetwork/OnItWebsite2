@@ -139,7 +139,7 @@ public class sendHandler extends HttpServlet {
                         recipientBalance += rs.getDouble(1);
                     }
                     
-                    rs = st.executeQuery("select pubkey from users where prikey=" + "'" + privateKey + "';");
+                    rs = st.executeQuery("select pubaddr from users where prikey=" + "'" + privateKey + "';");
                     while (rs.next()) {
                         senderAddress = rs.getString(1);
                     }
