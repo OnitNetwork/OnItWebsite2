@@ -58,7 +58,7 @@ public class sendHandler extends HttpServlet {
 
         Cookie cookie[] = request.getCookies();
         String privateKey = cookie[0].getValue();
-        
+
         PrintWriter pw = response.getWriter();
 
         try {
@@ -96,37 +96,51 @@ public class sendHandler extends HttpServlet {
         processRequest(request, response);
 
         PrintWriter out = response.getWriter();
-        
+
         Cookie cookie[] = request.getCookies();
         String privateKey = cookie[0].getValue();
 
         double sendAmount = Double.parseDouble(request.getParameter("sendAmount"));
-        double balance = Double.parseDouble(request.getParameter("balance"));
         String sendAddr = request.getParameter("sendAddress");
         double recipientBalance = 0;
-        
+        double balance = 0;
+
+        try {
+            Connection conn = getConnection();
+            Statement st = conn.createStatement();
+
+            ResultSet rs = st.executeQuery("select balance from users where prikey=" + "'" + privateKey + "';");
+            while (rs.next()) {
+                balance += rs.getDouble(1);
+            }
+            rs.close();
+            st.close();
+        } catch (Exception e) {
+            out.println(e);
+        }
+
         if (balance - sendAmount < 0) {
             request.setAttribute("notify", "Not enough in your piggy bank");
-        } else {            
+        } else {
             try {
                 Connection conn = getConnection();
-                Statement st = conn.createStatement();                                
+                Statement st = conn.createStatement();
 
                 ResultSet rs = st.executeQuery("select pubaddr from users where pubaddr=" + "'" + sendAddr + "';");
-                
+
                 if (rs.next()) {
                     rs = st.executeQuery("select balance from users where pubaddr=" + "'" + sendAddr + "';");
                     while (rs.next()) {
                         recipientBalance += rs.getDouble(1);
                     }
-                    
+
                     double senderFinalBalance = balance - sendAmount;
                     double recipientFinalBalance = recipientBalance + sendAmount;
-                    
+
                     st.executeUpdate("update users set balance = " + senderFinalBalance + " where pubaddr = '" + sendAddr + "';");
                     st.executeUpdate("update users set balance = " + recipientFinalBalance + " where pubaddr = '" + privateKey + "';");
                     response.sendRedirect("dashboard");
-                    
+
                 } else {
                     response.setContentType("text/html");
                     out.println("<script type=\"text/javascript\">");
